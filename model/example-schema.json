@@ -1,0 +1,38 @@
+{
+  "DocumentSchemas" : {
+    "ExampleDoc"              : {
+      "type"                  : "example",
+      "name"                  : "",
+      "subdoc"                : "@subdoc1",
+      "subdoc_list"           : [ "@subdoc1" ],
+      "subdoc_list_multiple"  : [ "@subdoc1", "@subdoc2" ],
+      "object"                : {
+        "test1"   :   "",
+        "subdoc"  :   "@subdoc1"
+      },
+      "test_list"   : [ ],
+      "$private"    : "",
+      "~optional"   : "",
+      "$~private_optional" : ""
+    }
+  },
+  "SubDocSchemas": {
+    "SubDoc1": {
+      "type"                  : "subdoc1",
+      "name"                  : "",
+      "subdoc"                : "@subdoc2",
+      "$private"    : "",
+      "~optional"   : "",
+      "$~private_optional" : ""
+    },
+    "SubDoc2": {
+      "type"                  : "subdoc2",
+      "name"                  : "",
+      "$private"    : "",
+      "~optional"   : "",
+      "$~private_optional" : ""
+    }
+  },
+  "OtherCategory": {
+  }
+}

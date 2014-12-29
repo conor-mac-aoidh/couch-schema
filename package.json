@@ -1,0 +1,21 @@
+{
+  "name": "couch-schema",
+  "version": "0.1",
+  "description": "A JavaScript schema for couchdb.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine-node spec --matchAll --autoTest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/conor-mac-aoidh/couch-schema.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conor-mac-aoidh/couch-schema/issues"
+  },
+  "homepage": "https://github.com/conor-mac-aoidh/couch-schema",
+  "dependencies": {
+  }
+}
