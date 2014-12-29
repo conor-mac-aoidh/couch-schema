@@ -1,6 +1,6 @@
 {
   "name": "couch-schema",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "A JavaScript schema for couchdb.",
   "main": "index.js",
   "scripts": {
