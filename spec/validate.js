@@ -128,6 +128,7 @@ describe('tests methods of the SchemaFactory', function(done){
       var cleanDoc = sf.sanitizeExampleDoc(doc);
       expect(cleanDoc.private).toEqual(undefined);
       expect(cleanDoc.private_optional).toEqual(undefined);
+      expect(cleanDoc.object.private).toEqual(undefined);
     } catch(e){
       expect(false).toBe(true);
       console.log(e);

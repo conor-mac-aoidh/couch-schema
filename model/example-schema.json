@@ -8,7 +8,8 @@
       "subdoc_list_multiple"  : [ "@subdoc1", "@subdoc2" ],
       "object"                : {
         "test1"   :   "",
-        "subdoc"  :   "@subdoc1"
+        "subdoc"  :   "@subdoc1",
+        "$private":   "test"
       },
       "test_list"   : [ ],
       "$private"    : "",
