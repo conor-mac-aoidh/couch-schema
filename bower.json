@@ -4,7 +4,7 @@
   "homepage": "https://github.com/conor-mac-aoidh/couch-schema",
   "authors": [
   ],
-  "description": ",
+  "description": "",
   "main": "lib/SchemaFactory.js",
   "license": "MIT",
   "private": true,
