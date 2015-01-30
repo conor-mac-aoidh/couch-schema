@@ -57,7 +57,7 @@ describe('tests methods of the SchemaFactory', function(done){
       });
     }
     catch(e){
-      expect(e.validation).toEqual('doc of type \'subdoc1\' has missing subdocument \'subdoc\'');
+      expect(e.validation[0]).toEqual('invalid subdocument, doc of type \'subdoc1\' has missing subdocument \'subdoc\''); 
     }
   });
 
@@ -68,7 +68,7 @@ describe('tests methods of the SchemaFactory', function(done){
       });
     }
     catch(e){
-      expect(e.validation).toEqual('doc of type \'example\' has missing property \'name\'');
+      expect(e.validation[0]).toEqual('schema invalid, doc of type \'example\' has missing property \'name\'');
     }
   });
 
@@ -81,7 +81,7 @@ describe('tests methods of the SchemaFactory', function(done){
       sf.validateExampleDoc(doc);
     }
     catch(err){
-      expect(err.validation).toEqual('The reference schema only permits sub-documents of the type \'@subdoc1\' in the field \'subdoc_list\'');
+      expect(err.validation[0]).toEqual('invalid subdocument, only type \'@subdoc1\' documents are permitted in the field \'subdoc_list\'');
     }
   });
 
