@@ -5,12 +5,14 @@
  *
  * @author Conor Mac Aoidh <conormacaoidh@gmail.com>
  */
+/* jshint camelcase:false */
 'use strict';
+console.log('test');
 
 var SchemaFactory = require('../index');
 var schema = require('../model/example-schema.json');
 
-describe('tests methods of the SchemaFactory', function(done){
+describe('tests methods of the SchemaFactory', function(){
 
   var sf;
 
@@ -29,23 +31,23 @@ describe('tests methods of the SchemaFactory', function(done){
     expect(typeof doc.subdoc_list).toEqual('object');
     expect(typeof doc.object.subdoc).toEqual('object');
     expect(typeof doc.private).toEqual('string');
-    expect(typeof doc.optional).toEqual('string');
-    expect(typeof doc.private_optional).toEqual('string');
+    expect(typeof doc.optional).toEqual('undefined');
+    expect(typeof doc.private_optional).toEqual('undefined');
 
     // test subdoc
     expect(typeof doc.subdoc).toEqual('object');
     expect(typeof doc.subdoc.subdoc).toEqual('object');
     expect(typeof doc.subdoc.name).toEqual('string');
     expect(typeof doc.subdoc.private).toEqual('string');
-    expect(typeof doc.subdoc.optional).toEqual('string');
-    expect(typeof doc.subdoc.private_optional).toEqual('string');
+    expect(typeof doc.subdoc.optional).toEqual('undefined');
+    expect(typeof doc.subdoc.private_optional).toEqual('undefined');
 
     // test subdoc list
     expect(typeof doc.subdoc_list_multiple).toEqual('object');
     expect(typeof doc.subdoc_list_multiple[0]).toEqual('object');
     expect(typeof doc.subdoc_list_multiple[0].private).toEqual('string');
-    expect(typeof doc.subdoc_list_multiple[0].optional).toEqual('string');
-    expect(typeof doc.subdoc_list_multiple[0].private_optional).toEqual('string');
+    expect(typeof doc.subdoc_list_multiple[0].optional).toEqual('undefined');
+    expect(typeof doc.subdoc_list_multiple[0].private_optional).toEqual('undefined');
 
   });
 
@@ -110,10 +112,10 @@ describe('tests methods of the SchemaFactory', function(done){
 
   it('should create and validate  example doc with optional fields', function() {
     var doc = sf.getExampleDoc();
-    expect(doc.optional).toBeDefined();
-    expect(doc.private_optional).toBeDefined();
-    delete doc.optional;
-    delete doc.private_optional;
+    expect(typeof doc.optional).toEqual('undefined');
+    expect(typeof doc.private_optional).toEqual('undefined');
+    doc.optional = 'test';
+    doc.private_optional = 'test1';
     try{
       sf.validateExampleDoc(doc);
     } catch(e){
@@ -126,9 +128,9 @@ describe('tests methods of the SchemaFactory', function(done){
     var doc = sf.getExampleDoc();
     try{
       var cleanDoc = sf.sanitizeExampleDoc(doc);
-      expect(cleanDoc.private).toEqual(undefined);
-      expect(cleanDoc.private_optional).toEqual(undefined);
-      expect(cleanDoc.object.private).toEqual(undefined);
+      expect(typeof cleanDoc.private).toEqual('undefined');
+      expect(typeof cleanDoc.private_optional).toEqual('undefined');
+      expect(typeof cleanDoc.object.private).toEqual('undefined');
     } catch(e){
       expect(false).toBe(true);
       console.log(e);
