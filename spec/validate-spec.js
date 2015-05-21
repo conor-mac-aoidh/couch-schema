@@ -59,7 +59,7 @@ describe('tests methods of the SchemaFactory', function(){
       });
     }
     catch(e){
-      expect(e.validation[0]).toEqual('invalid subdocument, doc of type \'subdoc1\' has missing subdocument \'subdoc\''); 
+      expect(e.validation[0]).toEqual('schema invalid, doc of type \'example\' has missing property \'subdoc\''); 
     }
   });
 
