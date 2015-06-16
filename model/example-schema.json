@@ -6,6 +6,7 @@
       "subdoc"                : "@subdoc1",
       "subdoc_list"           : [ "@subdoc1" ],
       "subdoc_list_multiple"  : [ "@subdoc1", "@subdoc2" ],
+      "subdoc_multiple"       : "@subdoc1,@subdoc2",
       "object"                : {
         "test1"   :   "",
         "subdoc"  :   "@subdoc1",

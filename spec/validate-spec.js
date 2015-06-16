@@ -42,6 +42,10 @@ describe('tests methods of the SchemaFactory', function(){
     expect(typeof doc.subdoc.optional).toEqual('undefined');
     expect(typeof doc.subdoc.private_optional).toEqual('undefined');
 
+    // test subdoc multiple
+    expect(typeof doc.subdoc_multiple).toEqual('object');
+    expect(doc.subdoc_multiple.type).toEqual('subdoc1');
+
     // test subdoc list
     expect(typeof doc.subdoc_list_multiple).toEqual('object');
     expect(typeof doc.subdoc_list_multiple[0]).toEqual('object');
